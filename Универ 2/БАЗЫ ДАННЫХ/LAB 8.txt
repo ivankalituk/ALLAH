@@ -1,0 +1,12 @@
+1
+
+
+
+
+
+
+
+CREATE TRIGGER trig2 BEFORE UPDATE ON book
+FOR EACH ROW
+IF YEAR(CURRENT_DATE) != YEAR(book.datee) AND book.new = 1
+	THEN book.new = 0
